@@ -1,0 +1,17 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 12.1.1
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[php5-fpm::example_pool]
+    attributes:
