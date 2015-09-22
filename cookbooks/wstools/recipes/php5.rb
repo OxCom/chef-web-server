@@ -58,7 +58,7 @@ execute 'PEAR: install xhprof' do
   command 'sudo pecl install -f xhprof'
 end
 
-ruby_block 'reload_client_config' do
+ruby_block 'Add xhprof for PHP5-FPM' do
   block do
     if File.exist?('/etc/php5/fpm/conf.d/20-xhprof.ini')
       open('/etc/php5/fpm/conf.d/20-xhprof.ini', 'w') do |f|
@@ -69,7 +69,7 @@ ruby_block 'reload_client_config' do
   action :run
 end
 
-ruby_block 'reload_client_config' do
+ruby_block 'Add xhprof for PHP5-CLI' do
   block do
     if File.exist?('/etc/php5/cli/conf.d/20-xhprof.ini')
       open('/etc/php5/cli/conf.d/20-xhprof.ini', 'w') do |f|
