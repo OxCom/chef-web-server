@@ -8,7 +8,6 @@
     ]
   },
   "run_list": [
-    // we should addnew repo
     "recipe[wstools::repos]",
     "recipe[apt]",
     "recipe[wstools::php5]",

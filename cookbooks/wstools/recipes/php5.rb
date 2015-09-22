@@ -58,12 +58,26 @@ execute 'PEAR: install xhprof' do
   command 'sudo pecl install -f xhprof'
 end
 
-open('/etc/php5/fpm/conf.d/20-xhprof.ini', 'w') do |f|
-  f.puts "extension=xhprof.so"
+ruby_block 'reload_client_config' do
+  block do
+    if File.exist?('/etc/php5/fpm/conf.d/20-xhprof.ini')
+      open('/etc/php5/fpm/conf.d/20-xhprof.ini', 'w') do |f|
+        f.puts "extension=xhprof.so"
+      end
+    end
+  end
+  action :run
 end
 
-open('/etc/php5/cli/conf.d/20-xhprof.ini', 'w') do |f|
-  f.puts "extension=xhprof.so"
+ruby_block 'reload_client_config' do
+  block do
+    if File.exist?('/etc/php5/cli/conf.d/20-xhprof.ini')
+      open('/etc/php5/cli/conf.d/20-xhprof.ini', 'w') do |f|
+        f.puts "extension=xhprof.so"
+      end
+    end
+  end
+  action :run
 end
 
 
