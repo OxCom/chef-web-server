@@ -37,7 +37,7 @@ if node["hostupgrade"]["update_system"]
 
             #Do apt-get upgrade
             bash "Run apt-get upgrade" do
-                code "DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y"
+                code "DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y --force-yes"
                 action :run
                 notifies :create, "ruby_block[Upgrade Flag Ubuntu]", :immediately
                 not_if { ( node.attribute?("upgrade_complete") && node["hostupgrade"]["first_time_only"] ) || ( node["hostupgrade"]["first_time_only"] && solo_upgrade_complete ) }

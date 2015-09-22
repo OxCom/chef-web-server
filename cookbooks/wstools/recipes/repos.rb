@@ -17,3 +17,11 @@ end
 package "python-software-properties" do
   action :install
 end
+
+execute 'UPGRADE SOFTWARE: MANUAL UPDATE' do
+  command 'sudo apt-get update'
+end
+
+execute 'UPGRADE SOFTWARE: MANUAL UPDATE' do
+  command 'sudo apt-get ugrade'
+end
