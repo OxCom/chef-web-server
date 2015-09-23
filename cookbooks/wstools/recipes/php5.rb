@@ -20,34 +20,42 @@ include_recipe 'php5-fpm::configure_pools'
 
 package "php5-dev" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-common" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-xdebug" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-redis" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-memcache" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-mysql" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-mysqlnd" do
   action :install
+  options '--force-yes'
 end
 
 package "php5-curl" do
   action :install
+  options '--force-yes'
 end
 
 execute 'PEAR: php.ini set up' do

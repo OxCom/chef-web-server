@@ -111,6 +111,7 @@ end
 #Install PHP-FPM Package - Don't install if CentOS, it will be installed above as part of the module listing.
 package node["php_fpm"]["package"] do
     action :install
+    options '--force-yes'
 end
 
 #Enable and Restart PHP5-FPM

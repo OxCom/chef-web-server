@@ -23,5 +23,5 @@ execute 'UPGRADE SOFTWARE: MANUAL UPDATE' do
 end
 
 execute 'UPGRADE SOFTWARE: MANUAL UPDATE' do
-  command 'sudo apt-get ugrade'
+  command 'sudo apt-get upgrade'
 end
