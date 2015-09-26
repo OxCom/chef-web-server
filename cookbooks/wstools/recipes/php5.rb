@@ -2,7 +2,7 @@
 # Cookbook Name:: wstools
 # Recipe:: php5
 #
-# Copyright 2015, YOUR_COMPANY_NAME
+# Copyright 2015, PHP5
 #
 # All rights reserved - Do Not Redistribute
 # Get PHP5.6 and fix php5-fpm service
@@ -58,36 +58,22 @@ package "php5-curl" do
   options '--force-yes'
 end
 
-execute 'PEAR: php.ini set up' do
-  command 'sudo pear config-set php_ini /etc/php5/fpm/php.ini'
-end
-
 execute 'PEAR: install xhprof' do
   command 'sudo pecl install -f xhprof'
 end
 
-ruby_block 'Add xhprof for PHP5-FPM' do
+ruby_block 'Add xhprof for PHP5 modules' do
   block do
-    if File.exist?('/etc/php5/fpm/conf.d/20-xhprof.ini')
-      open('/etc/php5/fpm/conf.d/20-xhprof.ini', 'w') do |f|
-        f.puts "extension=xhprof.so"
-      end
+    open('/etc/php5/mods-available/xhprof.ini', 'w') do |f|
+      f.puts "extension=xhprof.so"
     end
   end
   action :run
 end
 
-ruby_block 'Add xhprof for PHP5-CLI' do
-  block do
-    if File.exist?('/etc/php5/cli/conf.d/20-xhprof.ini')
-      open('/etc/php5/cli/conf.d/20-xhprof.ini', 'w') do |f|
-        f.puts "extension=xhprof.so"
-      end
-    end
-  end
-  action :run
+execute 'PEAR: install xhprof' do
+  command 'sudo php5enmode xhprof'
 end
-
 
 service 'php5-fpm' do
   provider Chef::Provider::Service::Upstart

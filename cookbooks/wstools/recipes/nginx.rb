@@ -9,3 +9,17 @@
 
 include_recipe 'nginx'
 
+directory "/var/www" do
+  owner 'root'
+  group 'root'
+  mode '0777'
+  action :create
+end
+
+directory "/var/www/default" do
+  owner 'root'
+  group 'root'
+  mode '0777'
+  action :create
+end
+
