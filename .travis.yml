@@ -3,7 +3,7 @@ before_script:
   # get chef installer
   - wget https://www.opscode.com/chef/install.sh -O chef.sh
   # install chef
-  - sudo bash install.sh
+  - sudo bash chef.sh
   # get version
   - chef-solo -v
 rvm:
