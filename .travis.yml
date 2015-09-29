@@ -1,11 +1,11 @@
 before_install: gem update --system 1.8.25
 before_script:
   # get chef installer
-  wget https://www.opscode.com/chef/install.sh -O chef.sh
+  - wget https://www.opscode.com/chef/install.sh -O chef.sh
   # install chef
-  sudo bash install.sh
+  - sudo bash install.sh
   # get version
-  chef-solo -v
+  - chef-solo -v
 rvm:
   - 1.9.3
 
