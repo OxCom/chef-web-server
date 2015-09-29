@@ -72,7 +72,7 @@ ruby_block 'Add xhprof for PHP5 modules' do
 end
 
 execute 'PEAR: install xhprof' do
-  command 'sudo php5enmode xhprof'
+  command 'sudo php5enmod xhprof'
 end
 
 service 'php5-fpm' do

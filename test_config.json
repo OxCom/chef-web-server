@@ -1,0 +1,19 @@
+{
+  "php-fpm": {
+    "pools": [ 
+      {
+        "name": "www",
+        "listen": "127.0.0.1:9000"
+      }
+    ]
+  },
+  "run_list": [
+    "recipe[wstools::repos]",
+    "recipe[wstools::php5]",
+    "recipe[wstools::nginx]",
+    "recipe[wstools::npm]",
+    "recipe[wstools::ruby]",
+    "recipe[wstools::composer]",
+    "recipe[wstools::redis]"
+  ]
+}

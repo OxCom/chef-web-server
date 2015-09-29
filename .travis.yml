@@ -13,7 +13,7 @@ rvm:
 
 script:
   # run chef
-  - sudo chef-solo -c config.rb -j config.json
+  - sudo chef-solo -c config.rb -j test_config.json
 
 after_success:
   # check build
