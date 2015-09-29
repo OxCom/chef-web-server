@@ -16,19 +16,17 @@ rvm:
 script:
   # run chef
   - sudo chef-solo -c config.rb -j config.travis.json
-
-after_success:
   # check build
-  - php -v
-  - php -m | grep xdebug
-  - php -m | grep redis
-  - php -m | grep mysql
-  - php -m | grep memcache
-  - php -m | grep curl
-  - php -m | grep xhprof
-  - nginx -v
-  - npm -v
-  - redis-cli -v
-  - redis-server -v
-  - ruby -v
-  - gem query --local
+    - php -v
+    - php -m | grep xdebug
+    - php -m | grep redis
+    - php -m | grep mysql
+    - php -m | grep memcache
+    - php -m | grep curl
+    - php -m | grep xhprof
+    - nginx -v
+    - npm -v
+    - redis-cli -v
+    - redis-server -v
+    - ruby -v
+    - gem query --local
