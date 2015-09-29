@@ -31,4 +31,4 @@ after_success:
   - redis-cli -v
   - redis-server -v
   - ruby -v
-  - compass -v
+  - gem query --local
