@@ -81,20 +81,22 @@ package "libffi-dev" do
   action :install
 end
 
-execute 'Ruby: Set key' do
-  command 'sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
-end
+if node["wstools"]["install_rvm"]
+  execute 'Ruby: Set key' do
+    command 'sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3'
+  end
 
-execute 'Ruby: Get stable RVM' do
-  command 'curl -L https://get.rvm.io | sudo bash -s stable'
-end
+  execute 'Ruby: Get stable RVM' do
+    command 'curl -L https://get.rvm.io | sudo bash -s stable'
+  end
 
-execute 'Ruby: install' do
-  command 'sudo /usr/local/rvm/scripts/rvm install 2.2.3'
-end
+  execute 'Ruby: install' do
+    command 'sudo /usr/local/rvm/scripts/rvm install 2.2.3'
+  end
 
-execute 'Ruby: use installed version' do
-  command 'sudo /usr/local/rvm/scripts/rvm use 2.1.2 --default'
+  execute 'Ruby: use installed version' do
+    command 'sudo /usr/local/rvm/scripts/rvm use 2.2.3 --default'
+  end
 end
 
 package "ruby-dev" do

@@ -2,6 +2,9 @@
   "hostupgrade": {
     "upgrade_system": false
   },
+  "wstools" : {
+    "install_rvm": false
+  },
   "php-fpm": {
     "pools": [ 
       {
