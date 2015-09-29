@@ -8,6 +8,6 @@ install:
   # get version
   - chef-solo -v
   # run chef
-  - sudo bash install.sh
+  - sudo chef-solo -c config.rb -j config.json
 rvm:
   - 1.9.3
