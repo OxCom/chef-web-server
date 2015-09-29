@@ -1,13 +1,13 @@
 sudo: required
-before_script:
+
+install:
   # get chef installer
   - wget https://www.opscode.com/chef/install.sh -O chef.sh
   # install chef
   - sudo bash chef.sh
   # get version
   - chef-solo -v
+  # run chef
+  - sudo bash install.sh
 rvm:
   - 1.9.3
-
-install:
-  - sudo bash chef.sh
