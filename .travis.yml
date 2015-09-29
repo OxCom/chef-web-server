@@ -1,4 +1,4 @@
-before_install: gem update --system 1.8.25
+sudo: required
 before_script:
   # get chef installer
   - wget https://www.opscode.com/chef/install.sh -O chef.sh
@@ -9,4 +9,5 @@ before_script:
 rvm:
   - 1.9.3
 
-sudo: required
+install:
+  - sudo bash chef.sh
