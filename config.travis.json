@@ -1,4 +1,7 @@
 {
+  "hostupgrade": {
+    "upgrade_system": false
+  },
   "php-fpm": {
     "pools": [ 
       {
