@@ -9,7 +9,3 @@
 package "redis-server" do
   action :install
 end
-
-package "redis-tools" do
-  action :install
-end
