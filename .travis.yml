@@ -10,6 +10,7 @@ install:
   # fix gpg --keyserver
   # - rm -rf ~/.gnupg
 rvm:
+  - 2.2.3
   - 1.9.3
 
 script:
@@ -19,5 +20,15 @@ script:
 after_success:
   # check build
   - php -v
+  - php -m | grep xdebug
+  - php -m | grep redis
+  - php -m | grep mysql
+  - php -m | grep memcache
+  - php -m | grep curl
+  - php -m | grep xhprof
   - nginx -v
   - npm -v
+  - redis-cli -v
+  - redis-server -v
+  - ruby -v
+  - compass -v

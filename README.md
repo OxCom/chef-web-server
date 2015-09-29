@@ -1,4 +1,4 @@
-Web Developer Tools
+Web Developer Tools [![Build Status](https://travis-ci.org/OxCom/chef-web-server.svg?branch=master)](https://travis-ci.org/OxCom/chef-web-server)
 ==========
 This soup made for [Chef](https://www.chef.io/chef/) and wasn't tested. So, please, be calm and remember that, this is private configuration for web servers. If you find any bug, just help me or make a fork and do your stuff.
 
