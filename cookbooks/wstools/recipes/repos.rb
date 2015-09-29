@@ -19,9 +19,9 @@ package "python-software-properties" do
 end
 
 execute 'UPGRADE SOFTWARE: MANUAL UPDATE' do
-  command 'sudo apt-get update'
+  command 'sudo apt-get update --force-yes -y'
 end
 
 execute 'UPGRADE SOFTWARE: MANUAL UPDATE' do
-  command 'sudo apt-get upgrade'
+  command 'sudo apt-get upgrade --force-yes -y'
 end
