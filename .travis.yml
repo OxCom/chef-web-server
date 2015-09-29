@@ -7,7 +7,8 @@ install:
   - sudo bash chef.sh
   # get version
   - chef-solo -v
-
+  # fix gpg --keyserver
+  - rm -rf ~/.gnupg
 rvm:
   - 1.9.3
 
