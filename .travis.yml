@@ -29,4 +29,3 @@ script:
     - redis-cli -v
     - redis-server -v
     - ruby -v
-    - gem query --local | grep compass
