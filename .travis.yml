@@ -1,0 +1,4 @@
+before_install: gem update --system 1.8.25
+before_script:  chef-solo -v
+rvm:
+  - 1.9.3
